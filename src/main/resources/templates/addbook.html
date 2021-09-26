@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Books list</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
+</head>
+<body>
+	<div class="container">
+		<h2>Add/Edit book</h2>
+		<form th:object="${book}" th:action="@{save}" action="#" method="post">
+			<table>
+				<tbody>
+					<tr><td>Title: </td><td><input type="text" th:field="${book.title}" /></td></tr>
+					<tr><td>Author: </td><td><input type="text" th:field="${book.author}"/></td></tr>
+					<tr><td>Year: </td><td><input type="text" th:field="${book.year}" /></td></tr>
+					<tr><td>ISBN: </td><td><input type="text" th:field="${book.isbn}" /></td></tr>
+					<tr><td>Category: </td><td>
+						<select th:field="*{category}" class="form-control">
+							<option th:each="category: ${categories}" th:value="${category.categoryId}" th:text="${category.name}"></option>
+						</select>
+					</td>
+				</tbody>
+			</table>
+			<input type="submit" value="Save"/>
+		</form>
+	</div>
+</body>
+</html>
