@@ -8,9 +8,10 @@
 <body>
 	<div class="container">
 		<h2>Add/Edit book</h2>
-		<form th:object="${book}" th:action="@{save}" action="#" method="post">
+		<form th:object="${book}" th:action="@{/save}" action="#" method="post">
 			<table>
 				<tbody>
+					<input type="hidden" th:field="${book.id}"/>
 					<tr><td>Title: </td><td><input type="text" th:field="${book.title}" /></td></tr>
 					<tr><td>Author: </td><td><input type="text" th:field="${book.author}"/></td></tr>
 					<tr><td>Year: </td><td><input type="text" th:field="${book.year}" /></td></tr>
