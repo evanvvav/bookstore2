@@ -18,6 +18,8 @@ public class Book {
 	private String isbn;
 	private double price;
 
+	// test gitti
+
 	@ManyToOne
 	@JoinColumn(name = "categoryId")
 	private Category category;
