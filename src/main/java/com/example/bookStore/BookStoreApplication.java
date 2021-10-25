@@ -1,6 +1,5 @@
 package com.example.bookStore;
 
-import org.apache.catalina.User;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,6 +9,7 @@ import com.example.bookStore.domain.Book;
 import com.example.bookStore.domain.BookRepository;
 import com.example.bookStore.domain.Category;
 import com.example.bookStore.domain.CategoryRepository;
+import com.example.bookStore.domain.User;
 import com.example.bookStore.domain.UserRepository;
 
 @SpringBootApplication
@@ -22,7 +22,8 @@ public class BookStoreApplication {
 	}
 
 	@Bean
-	public CommandLineRunner demo(BookRepository repository, CategoryRepository categoryRepository) {
+	public CommandLineRunner demo(BookRepository repository, CategoryRepository categoryRepository,
+			UserRepository UserRepository) {
 		return (args) -> {
 
 			categoryRepository.save(new Category("Mistery"));
