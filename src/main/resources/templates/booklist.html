@@ -7,9 +7,9 @@
     
 </head>
 <body>
-	<h1>Books</h1>
+	<h1 th:inline="text">Welcome [[${#httpServletRequest.remoteUser}]]</h1>
 	<form th:action="@{/logout}" method="post">
-		<input type="submit" value="Sign out"/>
+		<input class="btn btn-success"  type="submit" value="Sign out"/>
 	</form>
 	<table class="table table-striped">	
 		<tbody>
@@ -36,7 +36,7 @@
 		</tbody>
 	</table>	
 			<a href="/add" class="btn btn-success" >Add Book</a>
-
+			
 	
 	
     
